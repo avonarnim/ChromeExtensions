@@ -2,16 +2,29 @@
 <html>
   <head>
     <style>
-      button {
-        height: 30px;
-        width: 30px;
-        outline: none;
+      body {
+        border-width: thin;
+        border: red;
+      }
+      label {
+        border-style: none none solid none;
+        border: red;
+      }
+      div {
+        height: 80px;
+        width: 115px;
+        color: black;
+        background-color: white;
       }
     </style>
   </head>
   <body>
-    <p>Select which elements you wish to include</p>
-    <button id="changeColor"></button>
-    <script src="popup.js"></script>
+    <div>
+      <form>
+        <label>Enter your thought</label><br />
+        <input type="text" id="thought" name="thought" />
+      </form>
+      <script src="popup.js"></script>
+    </div>
   </body>
 </html>
