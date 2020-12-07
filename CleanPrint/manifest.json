@@ -1,0 +1,16 @@
+{
+  "name": "CleanPrint",
+  "description": "Prints specific components of a website",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "images/printer.png"
+    }
+  },
+  "icons": {
+    "128": "images/printer.png"
+  }
+}

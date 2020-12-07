@@ -1,0 +1,20 @@
+{
+  "name": "Thought Storage",
+  "description": "Allows a user to save entries to a file in their local directory",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "images/brain.png"
+    }
+  },
+  "icons": {
+    "128": "images/brain.png"
+  }
+}
