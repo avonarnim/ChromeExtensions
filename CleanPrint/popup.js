@@ -32,10 +32,22 @@ const get_document_depth = function (el) {
   }
 };
 
+let colorElements = function (parent, layer) {
+  parent.children.forEach((element) => {
+    colorElements(element, layer + 1);
+  });
+  element.color(layer);
+  element.addEventListener("click", function () {
+    element.recolorAndAddToListOfSoonToBePrinted();
+    element.addEventListener("click", function () {
+      // do opposite of what was just done: i.e. allow deselction
+    });
+  });
+};
+
 highlighBtn.addEventListener("click", function () {
   // Now have the max depth of the document
   let maxDepth = get_document_depth(document);
-  console.log(maxDepth);
 
   // Generating color increments
   let colorUnitPercentage = 1 / (maxDepth - 1);
@@ -48,6 +60,12 @@ highlighBtn.addEventListener("click", function () {
     );
     colorIncrements.push(newColor);
   }
-  console.log(maxDepth);
   console.log(colorIncrements);
+
+  colorElements(document, 0);
+});
+
+printBtn.addEventListener("click", function () {
+  // gather all textContents from selected elements
+  // create file to be saved to local storage
 });
